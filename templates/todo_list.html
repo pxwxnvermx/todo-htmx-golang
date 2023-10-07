@@ -1,5 +1,8 @@
-<ul id="todo_list">	
+<ul id="todo_list" hx-confirm="Are you sure?" hx-target="closest li" hx-swap="outerHTML swap">	
 	{{ range . }}
-	<li id="{{ .Id }}">{{ .Name }} - {{ .Done }}</li>
+	<li id="{{ .Id }}">
+		{{ .Name }} - {{ .Done }} 
+		<button hx-delete="/todos/{{ .Id }}">Delete</button>
+	</li>
 	{{ end }}
 </ul>
