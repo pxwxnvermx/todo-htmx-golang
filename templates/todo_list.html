@@ -1,0 +1,5 @@
+<ul id="todo_list">	
+	{{ range . }}
+	<li id="{{ .Id }}">{{ .Name }} - {{ .Done }}</li>
+	{{ end }}
+</ul>

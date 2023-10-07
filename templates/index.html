@@ -1,0 +1,12 @@
+{{ template "base" . }}
+
+{{ define "title" }} Hello {{end}}
+
+{{ define "content" }}
+<form hx-post="/todos" hx-target="#todos">
+	<input type="text" name="name" id="add_todo" placeholder="Add new todo"/>	
+	<button type="submit">Add</button>
+</form>
+{{ end }}
+
+<div id="todos" hx-get="/todos" hx-trigger="load"></div>
